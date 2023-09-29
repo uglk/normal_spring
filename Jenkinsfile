@@ -11,5 +11,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/uglk/normal_spring.git'
             }
         }
+        stage("Maven clean"){
+            steps{
+                sh 'mvn clean'
+            }
+        }
     }
 }

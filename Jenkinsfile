@@ -6,13 +6,9 @@ pipeline {
         dockerTool 'docker24'
     }
     stages {
-        stage("version") {
+        stage("SCM Checkout") {
             steps {
-                sh '''
-                mvn --version
-                java --version
-                docker version
-                ''' 
+                git branch: 'main', url: 'https://github.com/uglk/normal_spring.git'
             }
         }
     }

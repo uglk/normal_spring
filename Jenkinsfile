@@ -21,5 +21,10 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+        stage("Maven test"){
+            steps{
+                sh 'mvn test'
+            }
+        }
     }
 }

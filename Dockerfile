@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the petclinic.war file into the container
-COPY petclinic.war .
+COPY target/petclinic.war .
 
 # Expose the port your application will run on (e.g., 8080)
 EXPOSE 8080

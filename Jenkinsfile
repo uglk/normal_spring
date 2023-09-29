@@ -60,8 +60,8 @@ pipeline {
         }
         stage("running the docker images"){
             steps{
-               sh 'docker run -dit --name ullagallu/spring_petclinic:$IMAGE_TAG -p 8081:8080 ullagallu/spring_petclinic:$IMAGE_TAG'
-               sh 'docker run -dit --name ullagallu/spring_petclinic:latest -p 8082:8080 ullagallu/spring_petclinic:latest'
+               sh 'docker run -dit --name ullagallu/spring_petclinic_$IMAGE_TAG -p 8081:8080 ullagallu/spring_petclinic:$IMAGE_TAG'
+               sh 'docker run -dit --name ullagallu/spring_petclinic_latest -p 8082:8080 ullagallu/spring_petclinic:latest'
             }
         }
     }

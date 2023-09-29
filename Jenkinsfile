@@ -5,6 +5,13 @@ pipeline {
         jdk 'java17'
         dockerTool 'docker24'
     }
+    options{
+        buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: ''))
+        timestamps()
+    }
+    environment {
+    DOCKERHUB_CREDENTIALS = credentials('docker')
+    }
     stages {
         stage("SCM Checkout") {
             steps {
@@ -31,5 +38,10 @@ pipeline {
                 sh 'mvn package'
             }
         }
+        // stage("Docker Build"){
+        //     steps{
+        //         sh 'docker build ullagallu/spring_petclinic: '
+        //     }
+        // }
     }
 }

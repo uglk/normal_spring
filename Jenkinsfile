@@ -37,7 +37,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage("Maven package")
+        stage("Maven package"){
             // when { expression { false }}
             steps{
                 sh 'mvn package'
